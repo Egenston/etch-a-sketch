@@ -1,0 +1,130 @@
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul,
+ol,
+li{
+    list-style: none;
+}
+img{
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    font-weight: inherit;
+    font-size: inherit;
+}
+html,
+body{
+    height: 100%;
+    line-height: 1;
+    font-size: 16px;
+    color: black;
+}
+.wrapper{
+    min-height: 100%;
+    overflow: hidden;
+    background-color: rgb(255, 250, 206);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+}
+.wrapper h1{
+    font-family: 'Gluten', cursive;
+    font-size: 60px;
+    margin: 10px 0px;
+    text-shadow: -1px 1px gray,
+                 -2px 2px gray,
+                 -3px 3px gray,
+                 -4px 4px gray;
+}
+.drawing-section{
+    width: 800px;
+    height: 500px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#controls{
+    width: 300px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+.palette-circle{
+    height: 70px;
+    width: 70px;
+    background-color: lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid black;
+    transition: 0.2s;
+}
+.palette-circle:hover{
+    transform: scale(1.2);
+}
+#color-palette{
+    height: 70px;
+    width: 70px;
+    opacity: 0;
+    background-color: transparent;
+}
+#color-palette:hover{
+    cursor: pointer;
+}
+.control-button{
+    width: 180px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 15px;
+    font-family: 'Gluten', cursive;
+    font-size: 18px;
+    text-align: center;
+    box-shadow: -1px 1px gray,
+                 -2px 2px gray,
+                 -3px 3px gray,
+                 -4px 4px gray;
+    transition: 0.2s;
+}
+.control-button:hover{
+    box-shadow: none;
+    transform: translate(-4px, 4px);
+    border: none;
+    cursor: pointer;
+}
+.control-button.active{
+    box-shadow: none;
+    transform: translate(-4px, 4px);
+    border: none;
+    color: white;
+    background-color: black;
+}
+#drawing-area{
+    width: 500px;
+    height: 100%;
+    background-color: white;
+    box-shadow: 0px 0px 5px gray,
+                0px 0px 10px gray,
+                0px 0px 20px gray;
+    border-radius: 10px;
+}
