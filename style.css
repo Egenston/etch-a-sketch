@@ -33,6 +33,9 @@ body{
     font-size: 16px;
     color: black;
 }
+:root{
+    --grid-size: 1;
+}
 .wrapper{
     min-height: 100%;
     overflow: hidden;
@@ -41,7 +44,6 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: 0.3s;
 }
 .wrapper h1{
     font-family: 'Gluten', cursive;
@@ -80,9 +82,6 @@ body{
     border: 2px solid black;
     transition: 0.2s;
 }
-.palette-circle:hover{
-    transform: scale(1.2);
-}
 #color-palette{
     height: 70px;
     width: 70px;
@@ -118,6 +117,17 @@ body{
     border: none;
     color: white;
     background-color: black;
+    transition: none;
+}
+#controls p, #controls strong{
+    margin-top: 50px;
+    font-family: 'Gluten', cursive;
+    font-size: 20px;
+}
+#controls strong{
+    font-size: 25px;
+    margin-top: -20px;
+    height: 25px;
 }
 #drawing-area{
     width: 500px;
@@ -127,4 +137,131 @@ body{
                 0px 0px 10px gray,
                 0px 0px 20px gray;
     border-radius: 10px;
+    display: grid;
+    grid-template-rows: repeat(var(--grid-size), 1fr);
+    grid-template-columns: repeat(var(--grid-size), 1fr);
+}
+.grid-item{
+    text-align: center;
+}
+footer{
+    position: fixed;
+    background-color: rgb(255, 250, 206);
+    width: 100vw;
+    text-align: center;
+    bottom: 0;
+    padding-bottom: 10px;
+    font-family: 'Gluten', cursive;
+    font-size: 20px;
+}
+.fab.fa-github{
+    color: black;
+    font-size: 22px;
+    transition: 0.1s;
+}
+.fab.fa-github:hover{
+    transform: scale(1.2);
+}
+@media (max-width: 850px){
+    .drawing-section{
+        width: 600px;
+        height: 400px;
+    }
+    #controls{
+        width: 200px;
+        gap: 15px;
+    }
+    .palette-circle{
+        height: 60px;
+        width: 60px;
+    }
+    #color-palette{
+        height: 60px;
+        width: 60px;
+    }
+    .control-button{
+        width: 180px;
+        height: 40px;
+        font-size: 20px;
+    }
+    #controls p, #controls strong{
+        margin-top: 35px;
+        font-size: 20px;
+    }
+    #controls strong{
+    font-size: 22px;
+    margin-top: -15px;
+    }
+    #drawing-area{
+        width: 400px;
+        height: 400px;
+    }
+}
+@media (max-width:640px){
+    .wrapper h1{
+        font-size: 50px;
+    }
+    .drawing-section{
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0;
+        width: 400px;
+        height: 800px;
+        flex-direction: column-reverse;
+    }
+    #controls{
+        height: calc(800px - 450px);
+        width: 100%;
+        gap: 10px;
+    }
+    .palette-circle{
+        height: 50px;
+        width: 50px;
+    }
+    #color-palette{
+        height: 50px;
+        width: 50px;
+    }
+    #controls p, controls strong{
+        margin-top: 5px;
+    }
+    #controls strong{
+        margin-top: -5px;
+    }
+    #drawing-area{
+        width: 100%;
+        height: 400px;
+    }
+}
+@media (max-width: 450px){
+    .wrapper h1{
+        font-size: 12vw;
+    }
+    .drawing-section{
+        width: 90vw;
+        height: 100vh;
+    }
+    #drawing-area{
+        width: 90vw;
+        height: 90vw;
+    }
+    .control-button{
+        width: 150px;
+        height: 30px;
+        font-size: 17px;
+    }
+    #controls p, #controls strong{
+        margin-top: 0px;
+        font-size: 18px;
+    }
+    #controls strong{
+    font-size: 20px;
+    margin-top: -10px;
+    }
+    footer{
+        font-size: 17px;
+    }
+    .fab.fa-github{
+        font-size: 20px;
+    }
 }
