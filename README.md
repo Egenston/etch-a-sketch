@@ -1,0 +1,1 @@
+Etch-a-sketch project that requires HTML, CSS and JS knowledge.
